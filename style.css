@@ -1,0 +1,445 @@
+/* BASE STYLES */
+
+:root {
+  --main-black: rgb(24, 21, 21);
+  --main-black-alpha: rgba(24, 21, 21, 0.95);
+  --main-white: #d8d8d8;
+  --dark-red: rgb(168, 21, 21);
+  --page-link: rgba(203, 134, 80, 0.73);
+}
+
+html {
+  font-size: 62.5%;
+  /* 1rem = 10px */
+  box-sizing: border-box;
+  min-width: 320px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+@media only screen and (max-width: 68.75em) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media only screen and (max-width: 30em) {
+  html {
+    font-size: 40%;
+  }
+}
+
+body {
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--main-white);
+  background-color: var(--main-black);
+  background-image: linear-gradient(var(--main-black-alpha), var(--main-black-alpha)), url(./img/bg-repeat.jpg);
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: var(--main-white);
+  text-decoration: none;
+}
+
+hr {
+  width: 50%;
+  margin: 0 auto 2rem;
+}
+
+.page-link {
+  text-decoration: underline;
+  color: var(--page-link);
+}
+
+.page-link:hover {
+  color: var(--dark-red);
+}
+
+.section__header {
+  font-size: 6rem;
+  font-weight: 300;
+  text-align: center;
+  margin: 4rem 0 2rem 0;
+}
+
+/* UTILITY STYLES */
+
+.wrapper-flex {
+  display: flex;
+  justify-content: center;
+  padding: 6rem 0;
+  margin: 0 6rem;
+}
+
+.wrapper {
+  max-width: 1400px;
+  padding: 6rem 0;
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 68.75em) {
+  .wrapper-flex {
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 0;
+    margin: 0 3rem;
+  }
+  .wrapper {
+    padding: 3rem 0;
+  }
+}
+
+@media only screen and (max-width: 48em) {
+  .wrapper-flex {
+    padding: 2rem 0;
+    margin: 0 2rem;
+  }
+  .wrapper {
+    float: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0;
+    max-width: 100%;
+  }
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.cf::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.tc {
+  text-align: center;
+}
+
+.bb-red {
+  border-bottom: 4px solid var(--dark-red);
+}
+
+.bb-red--light {
+  border-bottom: 2px solid var(--dark-red);
+  width: 40%;
+  margin: 0 auto !important;
+}
+
+.section-hr {
+  display: block;
+  width: 100vw;
+  height: 0.5rem;
+  background: var(--dark-red);
+  border: none;
+  margin: 8rem 0;
+}
+
+.cite {
+  margin-left: 0.5rem;
+  font-size: 2rem;
+  vertical-align: text-top;
+}
+
+/* HEADER */
+
+.header-nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 10vh;
+}
+
+@media only screen and (max-width: 30em) {
+  .header-nav {
+    justify-content: flex-end;
+  }
+}
+
+.header-nav__list {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 10rem;
+  font-size: 2.5rem;
+  margin: 0;
+  text-transform: uppercase;
+  list-style: none;
+}
+
+@media only screen and (max-width: 30em) {
+  .header-nav__list {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-row-gap: 0.5rem;
+    text-align: right;
+    margin-right: 2rem;
+  }
+}
+
+.header-nav__link {
+  border-bottom: 2px solid transparent;
+  transition: border-bottom 0.2s ease-out;
+}
+
+.header-nav__link:hover {
+  border-bottom: 2px solid var(--dark-red);
+}
+
+/* HERO SECTION */
+
+.hero-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* PAGE INFO */
+
+.page-info {
+  padding: 10rem 0;
+  margin-bottom: 6rem;
+  background-color: var(--main-black-alpha);
+}
+
+.page-info__title {
+  font-family: Gaegu;
+  font-size: 5rem;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 0 0.4rem 0.3rem var(--main-black);
+  color: var(--dark-red);
+  margin: 0;
+  opacity: 0;
+  animation: fadeIn 1.5s ease-out 1s forwards;
+}
+
+.page-info__h1 {
+  font-family: 'Titillium Web';
+  margin: 0 0 1rem 0;
+}
+
+/* ARTICLES */
+
+
+.article-container__header {
+  font-size: 4rem;
+  text-align: center;
+}
+
+.article-container__paragraph {
+  font-size: 2.2rem;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+/* SONG SECTION */
+
+.song__lyrics {
+  width: 100%;
+  margin-right: 6rem;
+}
+
+.song__title {
+  text-align: center;
+  margin: 0 0 0.5rem 0;
+}
+
+.song__text {
+  font-family: 'Gaegu', cursive;
+  font-size: 2.5rem;
+  line-height: 1;
+  margin: 0 0 2.5rem 0;
+}
+
+@media only screen and (max-width: 68.75em) {
+  .song__lyrics {
+    width: 80%;
+    margin: 0 0 3rem 0;
+  }
+}
+
+.song__link {
+  display: block;
+  text-align: center;
+}
+
+/* CSS borrowed from bootstrap responsive embeds */
+
+.song__video {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  overflow: hidden;
+}
+
+.song__video-16by9::before {
+  content: "";
+  display: block;
+  padding-top: 56.25%;
+}
+
+.song__player {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ABOUT SECTION */
+
+.image-container {
+  margin-right: 4rem;
+}
+
+.image-container>img {
+  display: block;
+  max-width: 40vw;
+}
+
+/* DISCOGRAPHY SECTION */
+
+.discography {
+  margin: 0 4rem 8rem 4rem;
+}
+
+.discography__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* Version with no media queries, look pretty good but you don't have as much control as with mq */
+  grid-template-columns: repeat(auto-fit, minmax(430px, 1fr));
+  grid-gap: 4rem;
+  margin-top: 6rem;
+}
+
+/* @media only screen and (max-width: 68.75em) {
+  .discography__grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 3rem;
+  }
+}
+
+@media only screen and (max-width: 48em) {
+  .discography__grid {
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 3rem;
+  }
+} */
+
+.discography__album {
+  display: grid;
+  grid-template-rows: 1fr 6fr;
+  grid-template-columns: 1fr;
+  align-items: stretch;
+  background-color: var(--dark-red);
+}
+
+.discography__album-name {
+  font-size: 2.8rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0 2rem 0 2rem;
+  align-self: center;
+}
+@media only screen and (max-width: 68.75em) {
+  .discography__album-name {
+    font-size: 3rem;
+  }
+}
+
+.discography__album-cover {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* FOOTER */
+
+.links__list {
+  display: grid;
+  list-style: none;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 4rem;
+  justify-items: center;
+  align-items: center;
+}
+
+@media (max-width: 30em) {
+  .links__list {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 1fr;
+    grid-column-gap: 2rem;
+    grid-row-gap: 2rem;
+  }
+}
+
+.links__list:first-child {
+  text-align: center;
+}
+
+.links__social-icon {
+  width: 50px;
+}
+
+.links_link:hover {
+  opacity: 0.85;
+}
+
+.site-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2rem;
+  background-color: darkred;
+  border-top: 0.5rem solid var(--dark-red);
+}
+
+.credit {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  justify-items: center;
+  align-items: center;
+  grid-column-gap: 2rem;
+}
+
+.credit>img {
+  margin-bottom: 10px;
+}
