@@ -1,2 +1,2 @@
 # FCC-tribute-page-chuck-schuldiner
-FCC - Tribute Page
+Tribute Page to Chuck Schuldiner, with a retro-ish style.
